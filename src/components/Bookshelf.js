@@ -1,9 +1,11 @@
 import React from 'react';
 import Book from './Book';
 
-const Bookshelf = ({ books, shelf, shelves }) => {
+const Bookshelf = ({ books, shelf, shelves, onChangeShelf }) => {
   const renderedBooks = books.filter( book => (book.shelf === shelf.id))
-    .map(book => (<Book key={book.id} book={book} shelves={shelves} />));
+    .map(book => (
+      <Book key={book.id} book={book} books={books} shelves={shelves} onChangeShelf={onChangeShelf} />
+    ));
 
   return (
         <div className="bookshelf">
