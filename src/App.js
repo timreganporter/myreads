@@ -52,12 +52,12 @@ class BooksApp extends React.Component {
   render() {
     return (
       <div className="app">
-        <Route exact path="/" render={() => (
+        <Route exact path="/">
           <Booklist books={this.state.books} shelves={SHELVES} onChangeShelf={this.onChangeShelf} />
-        )} />
-        <Route path="/search" render={({ history }) => (
+        </Route>
+        <Route path="/search">
           <Search shelves={SHELVES} onChangeShelf={this.onChangeShelf} books={this.state.books}  />
-        )} />
+        </Route>
       </div>
     )
   }
